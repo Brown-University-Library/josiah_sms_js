@@ -6,7 +6,7 @@ var sms_handler = new function() {
    *
    * See <http://stackoverflow.com/a/881611> for module-pattern reference.
    * Minimizes chances that a function here will interfere with a similarly-named function in another imported js file.
-   * Only find_sms_image() can be called publicly, and only via ```sms_handler.find_sms_image();```.
+   * Only find_bib_items() can be called publicly, and only via ```sms_handler.find_bib_items();```.
    *
    * Class flow description:
    * - looks for existence of sms image. If image exists...
@@ -21,7 +21,7 @@ var sms_handler = new function() {
   var bibnum = null;
   var sms_url_root = "https://search.library.brown.edu/catalog/sms?id=";
   var sms_url_full = null;
-  var image_path = "http://127.0.0.1/~birkin/dev/fuji_clouds.jpg";
+  var image_path = "/screens/smsbutton.gif";
 
   this.find_bib_items = function() {
     /* Checks to see if bib_items exist.
