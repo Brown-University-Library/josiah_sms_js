@@ -43,12 +43,16 @@ var sms_handler = new function() {
      * Called by find_sms_image()
      */
     var elmnt = document.querySelector( "#recordnum" );
-    var url_string = elmnt.href;
-    var segments = url_string.split( "=" )[1];
-    bibnum = segments.slice( 0,8 );
-    console.log( "- bibnum, " + bibnum );
-    sms_url_full = sms_url_root + bibnum;
-    update_html();
+    if ( elmnt != null ) {
+        var url_string = elmnt.href;
+        var segments = url_string.split( "=" )[1];
+        bibnum = segments.slice( 0,8 );
+        console.log( "- bibnum, " + bibnum );
+        sms_url_full = sms_url_root + bibnum;
+        update_html();
+    } else {
+        console.log( "- no recordnum id, so no bib; exiting sms js" );
+    }
   }
 
   var update_html = function() {
